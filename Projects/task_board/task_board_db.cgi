@@ -82,7 +82,7 @@ print qq~
 <!-- a placeholder for the '+' button and instruction string to create sprint/member/task -->
     <div id="div1">
         <!-- href so task_board can link with task add page -->
-        <a href="task_add.html"><button style ="background-color:#FEFCFF" type ="button" class="btn btn-outline-dark">+</button></a>
+        <a href="task_add.pl"><button style ="background-color:#FEFCFF" type ="button" class="btn btn-outline-dark">+</button></a>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
         </svg>

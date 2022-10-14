@@ -1,13 +1,42 @@
-<!DOCTYPE html>
+#!c:/Strawberry/perl/bin/perl.exe
+
+use strict;
+use warnings;
+ 
+use CGI qw(:standard);
+use CGI::Carp qw(fatalsToBrowser);
+use DBI;
+use HTML::Template;
+
+
+my $dbfile = "../backlog.db";
+ 
+my $dsn  = "dbi:SQLite:dbname=$dbfile";
+my $user = "";
+my $password = "";
+my $dbh = DBI->connect($dsn, $user, $password, {
+   PrintError   => 0,
+   RaiseError   => 1,
+   AutoCommit   => 1,
+   FetchHashKeyName => 'NAME_lc',
+});
+
+my $sql = 'SELECT name FROM member';
+my $sth = $dbh->prepare($sql);
+$sth->execute();
+
+print "Content-type: text/html \n\n";
+
+print qq~
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>create task</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href=create_task.css>
-
+    <script src="script.js"></script>
+    <link rel="stylesheet" HREF="css/bootstrap.css" HREF="css/bootstrap-grid.css" HREF="css/bootstrap.min.css" HREF="css/bootstrap-grid.min.css" HREF="css/bootstrap-reboot.css" HREF="css/bootstrap-reboot.min.css" MEDIA="screen">
+    <link rel="stylesheet" href="create_task.css">
 </head>
 
 <body>
@@ -68,11 +97,14 @@
                     <select class="form-select form-control" id="inputGroupSelect01" name="members">
                         <!-- needs to get the members from the database -->
                         <option disabled selected>Choose your option</option>
-                        <option value="Andrew">Andrew</option>
-                        <option value="Damia">Damia</option>
-                        <option value="Nicholas">Nicholas</option>
-						<option value="Mior">Mior</option>
-						<option value="Arrtish">Arrtish</option>
+                        ~;
+while (my @row = $sth->fetchrow_array()) {
+  my ($name) = @row;
+  print qq~
+  <option value="$name">$name</option>
+~;
+}
+  print qq~
                     </select>
                 </div>
             </div>
@@ -84,10 +116,10 @@
             </div>
         </div>
     </form>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-        crossorigin="anonymous"></script>
 </body>
 
 </html>
+~;
+   
 
+$dbh->disconnect;
