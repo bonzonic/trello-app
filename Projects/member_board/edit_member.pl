@@ -58,6 +58,7 @@ print qq~
         </style>
     </head>
     <body>
+        <form action="save_member.pl" method="post">
             <div id="main">
                 <div class="form-row">
                     <div class="form-group col-md-9">
@@ -67,32 +68,25 @@ print qq~
                     <div class="form-group col-md-9">
                         <!--A place holder to display the member's name-->
                       <label for="inputTaskName" style="font-weight:bold">Name :</label>
-                      <input type="text" class="form-control" id="outputName" style="text-align: center; font-weight: bold;" value="$name"readonly>
+                      <input type="text" class="form-control" id="outputName" style="text-align: center; font-weight: bold;" name="name" value="$name">
                     </div>
                     <div class="form-group col-md-9">
                         <!--A place holder to display the member's role-->
                       <label for="inputTaskName" style="font-weight:bold">Role :</label>
-                      <input type="text" class="form-control" id="outputRole" style="text-align: center; font-weight: bold;"value="$role" readonly>
+                      <input type="text" class="form-control" id="outputRole" style="text-align: center; font-weight: bold;" name="role" value="$role">
                     </div>
                     <div class="form-group col-md-9">
                         <!--A place holder to display the member's email-->
                       <label for="inputTaskName" style="font-weight:bold">Email address:</label>
-                      <input type="text" class="form-control" id="outputEmail" style="text-align: center; font-weight: bold;"value="$email" readonly >
+                      <input type="text" class="form-control" id="outputEmail" style="text-align: center; font-weight: bold;"name="email" value="$email">
                     </div>
                     
                     <div class="form-group col-md-9" style="margin-top:30px">
                         <!-- A button to delete member -->
-                        <form action="delete_member.pl" method="post">
                         <input type="hidden" name="row" class="btn btn-primary" value="$id">
-				        <input type="submit" class="btn btn-primary" style="float:left;" value="Delete">
+				        <input type="submit" class="btn btn-primary" style="margin-right:10px; float:right;" value="Save">
                         </form>
                         <!-- A button to save and link to team board -->
-                        <a class="btn btn-primary" href="team_board.pl" role="button" type="submit" value="Done"style="margin-right:10px; float:right;" >Back</a>
-                        <!-- A button to edit -->
-                        <form action="edit_member.pl" method="post">
-                        <input type="hidden" name="row" class="btn btn-primary" value="$id">
-				        <input type="submit" class="btn btn-primary" style="margin-right:10px; float:right;" value="Edit">
-                        </form>
                     </div>
                 </div>
             </div>
