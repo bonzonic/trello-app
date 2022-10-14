@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Sprint</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            h4{
+                color:#326EDB;
+                font-weight: bold;
+            }
+            #main{
+                margin: 100px;
+                margin-left: 200px;
+               
+
+                
+            }
+        </style>
+    </head>
+    <body>
+        <form action="start_sprint_page.cgi", method="get">
+            <div id="main">
+                <div class="form-row">
+                    <div class="form-group col-md-9">
+                        <!--Title of the web page which is New Sprint-->
+                        <h4 id="newTask" >New Sprint</h4>
+                    </div>
+                    <div class="form-group col-md-9">
+                        <!--A place holder to insert the sprint name-->
+                      <label for="inputTaskName" style="font-weight:bold">Sprint Name :</label>
+                      <input type="text" class="form-control" name="sprintName" placeholder="Enter Sprint name" >
+                    </div>
+                    <div class="form-group col-md-9">
+                        <!-- A placeholder to insert the sprint's start date-->
+                        <label for="date" style="font-weight:bold">Start Date :</label>
+                        <input type="date" class="form-control" name="sprintStartDate" name="start_date">
+                    </div>
+                    <div class="form-group col-md-9">
+                        <!-- A placeholder to insert the sprint's end date-->
+                        <label for="date" style="font-weight:bold">End Date :</label>
+                        <input type="date" class="form-control" name="sprintEndDate" name="end_date">
+                    </div>
+                    <div class="form-group col-md-9">
+                        <!-- A button to start the sprint-->
+                        <input class="btn btn-success" type="submit" role="button" value="Save" style="float:right ;"></input>
+                        <!-- A button to return to the sprint board-->
+                        <a class="btn btn-primary" href="sprint_board_db.cgi" role="button" style="margin-right:10px; float:right;">Cancel</a>
+                    </div>
+                </div>
+            </div>
+            
+        </form>
+    </body>
+</html>

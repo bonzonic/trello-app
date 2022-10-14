@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--To view a member-->
+        <title>View Member</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!--Style needed for the web browser-->
+        <style>
+            h4{
+                color:#326EDB;
+                font-weight: bold;
+            }
+            #main{
+                margin: 100px;
+                margin-left: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <div id="main">
+                <div class="form-row">
+                    <div class="form-group col-md-9">
+                        <!--Title of the web page which is Member-->
+                        <h4 id="newTask">Member</h4>
+                    </div>
+                    <div class="form-group col-md-9">
+                        <!--A place holder to display the member's name-->
+                      <label for="inputTaskName" style="font-weight:bold">Name :</label>
+                      <input type="text" class="form-control" id="outputName" style="text-align: center; font-weight: bold;"placeholder="Benjamin" readonly>
+                    </div>
+                    <div class="form-group col-md-9">
+                        <!--A place holder to display the member's role-->
+                      <label for="inputTaskName" style="font-weight:bold">Role :</label>
+                      <input type="text" class="form-control" id="outputRole" style="text-align: center; font-weight: bold;"placeholder="Front End Developer" readonly>
+                    </div>
+                    <div class="form-group col-md-9">
+                        <!--A place holder to display the member's email-->
+                      <label for="inputTaskName" style="font-weight:bold">Email address:</label>
+                      <input type="text" class="form-control" id="outputEmail" style="text-align: center; font-weight: bold;"placeholder="notben@gmail.com" readonly >
+                    </div>
+                    
+                    <div class="form-group col-md-9" style="margin-top:30px">
+                        <!-- A button to delete member -->
+                        <a class="btn btn-primary" href="team_board.html" role="button" type="submit" value="Done"style=" float:left;" >Delete</a>
+                        <!-- A button to save and link to team board -->
+                        <a class="btn btn-primary" href="team_board.html" role="button" type="submit" value="Done"style="margin-right:10px; float:right;" >Save</a>
+                        <!-- A button to edit -->
+                        <a class="btn btn-primary" href="#" role="button" style="margin-right:10px; float:right;">Edit</a>
+                    </div>
+                </div>
+            </div>
+            
+        </form>
+    </body>
+</html>

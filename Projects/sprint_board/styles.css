@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+  }
+  
+  .container {
+    background-color: #E5E4E2;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .draggable {
+    padding: 1rem;
+    background-color: white;
+    border: 1px solid #E5E4E2;
+    cursor: move;
+  }
+  
+  .draggable.dragging {
+    opacity: .5;
+  }
+
+  .just-line-break{
+    white-space: pre-line;
+  }
+
+  .line-break-and-tab {
+    white-space: pre-wrap;
+  }
+
+  .form{
+    font-family: Helvetica, Arial, sans-serif;
+  }
+
+  .button {
+    background-color:#1F51FF;
+    color: #fff; 
+    border: none;
+    border-radius:10px; 
+    padding:13px;
+    min-height: 20px; 
+    min-width: 95px;
+    text-decoration: none;
+    text-align: center
+  }
+  
+  
+  
+  
+  
+  
+  
+  /* Background Styles Only */
+  
+  @import url('https://fonts.googleapis.com/css?family=Raleway');
+  
+  * {
+      font-family: Raleway;
+  }
+  
+  .side-links {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+  
+  .side-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-bottom: 10px;
+    color: white;
+    width: 180px;
+    padding: 10px 0;
+    border-radius: 10px;
+  }
+

@@ -1,0 +1,11 @@
+form{
+    font-family: Helvetica, Arial, sans-serif;
+
+}
+#main{
+    margin:80px;font-weight:bold;
+
+}
+#newTask{
+    font-weight:bold ;margin-bottom: 30px;
+}

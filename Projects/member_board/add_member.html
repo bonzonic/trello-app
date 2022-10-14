@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--To add a new member-->
+        <title>Add Member</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!--Style needed for the web browser-->
+        <script src="add_member.js"></script>
+        <style>
+            h4{
+                color:#326EDB;
+                font-weight: bold;
+            }
+            #main{
+                margin: 100px;
+                margin-left: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <form name="myForm" action="add_member.pl" method="post" onsubmit="return validateForm()">
+            <div id="main">
+                <div class="form-row">
+                    <div class="form-group col-md-9">
+                        <!--Title of the web page which is New Member-->
+                        <h4 id="newTask">New Member</h4>
+                    </div>
+                    <div class="form-group col-md-9">
+                        <!--A place holder to insert the member's name-->
+                      <label for="inputTaskName" style="font-weight:bold">Name :</label>
+                      <input type="text" class="form-control" name="inputName" placeholder="Enter name" >
+                    </div>
+                    <div class="form-group col-md-9">
+                        <!--A place holder to insert the member's role-->
+                      <label for="inputTaskName" style="font-weight:bold">Role :</label>
+                      <input type="text" class="form-control" name="inputRole" placeholder="Enter role" >
+                    </div>
+                    <div class="form-group col-md-9">
+                        <!--A place holder to insert the member's email-->
+                      <label for="inputTaskName" style="font-weight:bold">Email address:</label>
+                      <input type="text" class="form-control" name="inputEmail" placeholder="name@example.com" >
+                    </div>
+                    
+                    <div class="form-group col-md-9">
+                        <!-- A button to submit and link to team board -->
+                        <input class="btn btn-primary" type="submit" value="Done"style="margin-right:10px; float:right;" >
+                        <!-- A button to cancel and link to team board-->
+                        <a class="btn btn-primary" href="team_board.pl" role="button" style="margin-right:10px; float:right;">Cancel</a>
+                    </div>
+                </div>
+            </div>
+            
+        </form>
+    </body>
+</html>
