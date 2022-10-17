@@ -50,7 +50,6 @@ CREATE TABLE sprints (
   end_date         VARCHAR(100),
   task_id_list     VARCHAR(100),
   get_started_bool INTEGER
-  
 )
 
 END_SQL
@@ -73,7 +72,9 @@ CREATE TABLE tasks (
   members          ENUM(100),
   priority_id      INTEGER,
   priority_hex     VARCHAR(100),
-  assigned_to_sprint INTEGER
+  assigned_to_sprint INTEGER,
+  member_id       NUMBER(8) NOT NULL, 
+  FOREIGN KEY (member_id) REFERENCES member(id)
 )
 
 END_SQL

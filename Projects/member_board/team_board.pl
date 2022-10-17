@@ -71,7 +71,7 @@ print qq~
                     <!-- Button to view the task -->
                     <a class="btn btn-primary" href="../task_board/task_board_db.cgi" role="button" style="float: right; margin-left:10px">View Task</a>
                     <!-- Button to view the team dashboard-->
-                    <a class="btn btn-dark" href="#" role="button" style="float: right;">Team Dashboard</a>
+                    <a class="btn btn-dark" href="team_dashboard.html" role="button" style="float: right;">Team Dashboard</a>
                 </div>
             </div>	
             

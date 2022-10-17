@@ -21,7 +21,7 @@ my $dbh = DBI->connect($dsn, $user, $password, {
    FetchHashKeyName => 'NAME_lc',
 });
 
-my $sql = 'SELECT name FROM member';
+my $sql = 'SELECT id, name FROM member';
 my $sth = $dbh->prepare($sql);
 $sth->execute();
 
@@ -99,7 +99,7 @@ print qq~
                         <option disabled selected>Choose your option</option>
                         ~;
 while (my @row = $sth->fetchrow_array()) {
-  my ($name) = @row;
+  my ($id, $name) = @row;
   print qq~
   <option value="$name">$name</option>
 ~;

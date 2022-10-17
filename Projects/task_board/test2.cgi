@@ -23,8 +23,8 @@ my $dbh = DBI->connect($dsn, $user, $password, {
    FetchHashKeyName => 'NAME_lc',
 });
  
- 
- 
+
+
 my $task_name = param ('task_name');
 my $story_points = param ('story_point');
 my $descrip = param('description');
@@ -35,7 +35,7 @@ my $task_priority =  param ('task_priority');
 my $members = param ('members');
 my $priority_id;
 my $priority_hex;
-
+my $member_id;
 
 if($task_priority eq "Critical"){
 	$priority_id = 1;
@@ -51,10 +51,20 @@ if($task_priority eq "Critical"){
 	$priority_hex = "#39C000";
 }
 
+my $sql = 'SELECT id, name FROM member';
+my $sth = $dbh->prepare($sql);
+$sth->execute();
 
-$dbh->do('INSERT INTO tasks(task_name, story_points, descrip, deadline_date, task_type, task_tags, task_priority, members, priority_id, priority_hex) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+while (my @row = $sth->fetchrow_array()) {
+  my ($id, $name) = @row;
+  if ($members eq $ name) {
+	$member_id = $id;
+  }
+}
+  
+$dbh->do('INSERT INTO tasks(task_name, story_points, descrip, deadline_date, task_type, task_tags, task_priority, members, priority_id, priority_hex, member_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
 		undef, 
-		$task_name, $story_points, $descrip, $deadline_date, $task_type, $task_tags, $task_priority, $members, $priority_id, $priority_hex);
+		$task_name, $story_points, $descrip, $deadline_date, $task_type, $task_tags, $task_priority, $members, $priority_id, $priority_hex, $member_id);
 
 
 my $url = "task_board_db.cgi";
