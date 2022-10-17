@@ -119,7 +119,10 @@ print qq~
                                   </div>
                                     <!--Button to see the analytics for a member-->
                                     <div class="col-sm-1">
-                                        <a class="btn btn-dark" href="#" role="button" style="float: right;">Analytics</a>
+                                        <form action="member_analytics.pl">
+                                            <input type="hidden" name="row" class="btn btn-primary" value="$row->{id}"> 
+                                            <input type="submit" class="btn btn-dark" role="button" style="float: right;" value="Analytics">
+                                        </form>
                                     </div>
                                 </div>
                             </div>
